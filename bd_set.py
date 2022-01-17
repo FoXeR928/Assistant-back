@@ -1,6 +1,7 @@
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import create_engine
+from sqlalchemy.sql.expression import column
 from config_init import base, table_pc, table_prog
 
 Base = declarative_base()
@@ -10,7 +11,8 @@ Base.metadata.create_all(engine)
 
 class PC(Base):
     __tablename__ = table_pc
-    id=Column(String,primary_key=True, nullable=False)
+    id=Column(String,primary_key=True)
+    password=Column(String)
     pc_name=Column(String)
     mac=Column(String, unique=True)
     win=Column(String)

@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from config_init import base
-from bd_set import Base, PC
+from bd_set import Base
 
 def open_base(base):
     engine = create_engine(f"sqlite:///{base}.db")
@@ -10,9 +10,12 @@ def open_base(base):
     session = DBSession()
     return session
 
-def read_mac(id, table):
+def read_mac(password, table):
     session=open_base(base)
-    mac=session.query(table).filter(table.id==id).one()
+    result=session.query(table).filter(table.password==password).one()
+    return result.mac
 
-
-print(read_mac(1,PC))
+def read_path(programm, table):
+    session=open_base(base)
+    result=session.query(table).filter(table.programm==programm).one()
+    return result.path
