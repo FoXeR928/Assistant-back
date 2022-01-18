@@ -11,8 +11,14 @@ Base.metadata.create_all(engine)
 
 class PC(Base):
     __tablename__ = table_pc
-    id=Column(String,primary_key=True)
+    id=Column(Integer,primary_key=True)
     password=Column(String)
     pc_name=Column(String)
     mac=Column(String, unique=True)
     win=Column(String)
+
+class PROG(Base):
+    __tablename__=table_prog
+    id=Column(Integer,primary_key=True)
+    programm=Column(String)
+    path=Column(String)
