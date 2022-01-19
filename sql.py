@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from config_init import base
-from bd_set import PROG, Base
+from bd_set import Base
 
 def open_base(base):
     engine = create_engine(f"sqlite:///{base}.db")
@@ -19,3 +19,8 @@ def read_path(programm, table):
     session=open_base(base)
     result=session.query(table).filter(table.programm.like("%" + programm + "%")).one()
     return result.path
+
+def read_win(password, table):
+    session=open_base(base)
+    result=session.query(table).filter(table.password==password).one()
+    return result.win, result.pc_name

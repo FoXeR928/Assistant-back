@@ -1,7 +1,6 @@
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import create_engine
-from sqlalchemy.sql.expression import column
 from config_init import base, table_pc, table_prog
 
 Base = declarative_base()
