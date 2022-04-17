@@ -11,5 +11,3 @@ def shutdown(time, win, name, password):
 def start_programm(path, win, name, password):
     session=init_winrm(win, name, password)
     session.run_cmd('start '+path)
-
-start_programm('D:\Steam\Steam.exe','192.168.88.244', 'Asus-Pro-Gaming','')

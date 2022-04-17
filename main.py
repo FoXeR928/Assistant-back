@@ -1,6 +1,6 @@
 import uvicorn
 from app import app
-from config_init import ip, port
+from config.config_init import ip, port
 
 
 if __name__ == "__main__":
