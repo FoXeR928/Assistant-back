@@ -3,7 +3,7 @@ from glob import glob
 
 def ini_config():
     config=ConfigParser()
-    config.read(glob("config/*.ini"))
+    config.read(glob("*.ini"))
     ip_conf=variables(
             config["host"]["ip"], 
             int(config["host"]["port"]), 

@@ -1,10 +1,9 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from config.config_init import base
-from sql.bd_set import Base
+from config_init import base
+from bd_set import Base, engine
 
 def open_base(base):
-    engine = create_engine(f"sqlite:///sql/{base}.db")
     Base.metadata.bind = engine
     DBSession = sessionmaker(bind=engine)
     session = DBSession()

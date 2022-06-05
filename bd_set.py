@@ -1,7 +1,7 @@
 from sqlalchemy import Column, ForeignKey, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import create_engine
-from config.config_init import base, table_users,table_pc, table_prog
+from config_init import base, table_users,table_pc, table_prog
 
 Base = declarative_base()
 engine = create_engine(f"sqlite:///{base}.db")

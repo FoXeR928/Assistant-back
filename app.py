@@ -1,8 +1,8 @@
 import fastapi
-from sql.bd_set import PC, PROG, USERS
-from wake_on_lan.wake_on_lan import wake_pc
-from wrm.winrm import shutdown, start_programm
-from sql.sql import read_mac, read_path, read_win, write_path, write_pc
+from bd_set import PC, PROG, USERS
+from wake_on_lan import wake_pc
+from winrm import shutdown, start_programm
+from sql import read_mac, read_path, read_win, write_path, write_pc
 
 app = fastapi.FastAPI()
 
