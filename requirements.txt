@@ -1,5 +1,4 @@
 configparser==5.2.0
-pywinrm==0.4.2
 wakeonlan==2.1.0
 sqlalchemy==1.4.30
 uvicorn==0.17.0

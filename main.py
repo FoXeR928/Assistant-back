@@ -1,11 +1,13 @@
-import uvicorn
+import unicorn
 from app import app
-from config_init import ip, port
+from socket_win import init_socket
+from config_init import ip, port_app
 
 
 if __name__ == "__main__":
-    uvicorn.run(
+    unicorn.run(
         app,
         host=ip,
-        port=port,
+        port=port_app,
     )
+    init_socket()
